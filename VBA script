@@ -51,11 +51,11 @@ For i = 2 To irow
 
     If ws.Cells(i, 1) <> ws.Cells(i + 1, 1) Then
 
-        'Adjusting for the ticker in seperate column
+        'Moving ticker
         ticker = ws.Cells(i, 1)
         ws.Cells(jrow, 10) = ticker
 
-        'closeprice and yearly change for seperate column
+        
         closep = ws.Cells(i, 6)
         yc = closep - openp
         ws.Cells(jrow, 11) = yc
@@ -102,7 +102,7 @@ For i = 2 To irow
     End If
 
 Next i
-    'This is after getting the formula/code from above to put it solution on the ws
+    
     ws.Range("Q2") = Greatinc_tick
     ws.Range("R2") = FormatPercent(Greatinc)
     ws.Range("Q3") = Greatdec_tick
